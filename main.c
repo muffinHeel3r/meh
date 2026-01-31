@@ -156,49 +156,49 @@ void search_faculty() {
 
     fp = fopen("FacultyProfile.txt", "r");
     if (fp != NULL) {
-        head = 0;
+    head = 0;
 
-        while (fgets(line, 500, fp) != NULL) {
-            if (strstr(line, key) != NULL) {
-                if (head == 0) {
-                    printf("\n[FACULTY PROFILE]\n");
-                    printf("Faculty ID\t\tShort Name\t\tDesignation\t\t\tResearch Area\n");
-                    printf("-----------------------------------------------------------------------------------------------\n");
-                    head = 1;
-                }
-                printf("%s", line);
-                tf = 1;
-            }
-        }
-        fclose(fp);
+    while (fgets(line, 500, fp) != NULL) {
+    if (strstr(line, key) != NULL) {
+    if (head == 0) {
+    printf("\n[FACULTY PROFILE]\n");
+    printf("Faculty ID\t\tShort Name\t\tDesignation\t\t\tResearch Area\n");
+     printf("-----------------------------------------------------------------------------------------------\n");
+    head = 1;
+    }
+    printf("%s", line);
+    tf = 1;
+    }
+    }
+    fclose(fp);
     }
 
     bf = fopen("PublicationRecords.txt", "r");
     if (bf != NULL) {
-        head = 0;
+    head = 0;
 
-        while (fgets(line, 500, bf) != NULL) {
-            if (strstr(line, key) != NULL) {
-                if (head == 0) {
-                    printf("\n[PUBLICATION RECORDS]\n");
-                    printf("Year\t\tType\t\tFaculty\t\tTitle\n");
-                    printf("-----------------------------------------------------------------------------------------------\n");
-                    head = 1;
-                }
-                printf("%s", line);
-                tp = 1;
-            }
-        }
-        fclose(bf);
+    while (fgets(line, 500, bf) != NULL) {
+    if (strstr(line, key) != NULL) {
+    if (head == 0) {
+    printf("\n[PUBLICATION RECORDS]\n");
+    printf("Year\t\tType\t\tFaculty\t\tTitle\n");
+    printf("-----------------------------------------------------------------------------------------------\n");
+    head = 1;
+    }
+    printf("%s", line);
+    tp = 1;
+    }
+    }
+    fclose(bf);
     }
 
     if (tf == 0 && tp == 0) {
-        printf("\nNo matches found.\n");
+    printf("\nNo matches found.\n");
     }
 
     printf("\n");
     choice();
-}
+    }
 
 int choice(){
     int c;
@@ -244,3 +244,4 @@ void main()
     main_menu();
     choice();
 }
+
